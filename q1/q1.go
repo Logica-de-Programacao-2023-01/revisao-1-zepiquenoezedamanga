@@ -24,16 +24,16 @@ func CalculateDiscount(currentPurchase float64, purchaseHistory []float64) (floa
 		desconto = currentPurchase * 0.10
 		currentPurchase = desconto
 
-	} else if soma <= 1000.00 {
+	} else if soma == 0 {
+		desconto = currentPurchase * 0.10
+		currentPurchase = desconto
+
+	} else if soma > 500.00 && soma <= 1000.00 {
 		desconto = currentPurchase * 0.05
 		currentPurchase = desconto
 
 	} else if soma <= 500.00 {
 		desconto = currentPurchase * 0.02
-		currentPurchase = desconto
-
-	} else if soma == 0 {
-		desconto = currentPurchase * 0.10
 		currentPurchase = desconto
 
 	}
