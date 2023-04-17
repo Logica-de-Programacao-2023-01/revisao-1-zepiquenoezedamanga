@@ -9,13 +9,16 @@ func FindMinMaxAverage(numbers []int) (int, int, float64, error) {
 	if len(numbers) == 0 {
 		return 0, 0, 0, fmt.Errorf("lista vazia")
 	}
+	if len(numbers) == 1 {
+		return numbers[0], numbers[0], float64(numbers[0]), nil
+	}
 	var maior int
 	var menor int
 	sort.Ints(numbers)
 	menor = (numbers[0])
 	maior = (numbers[len(numbers)-1])
 	if numbers[0] < 0 {
-		maior = menor
+		maior = numbers[0]
 		menor = (numbers[len(numbers)-1])
 	}
 	var soma int
