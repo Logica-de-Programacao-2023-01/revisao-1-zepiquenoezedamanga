@@ -4,4 +4,4 @@ func CalculateDiscount(currentPurchase float64, purchaseHistory []float64) (floa
 	// Implemente sua solução aqui
 	return 0, nil
 }
-sexo
+
