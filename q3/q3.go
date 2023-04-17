@@ -21,5 +21,5 @@ func FindMinMaxAverage(numbers []int) (int, int, float64, error) {
 		media = float64(soma) / float64(len(numbers))
 
 	}
-	return menor, maior, media, nil
+	return maior, menor, media, nil
 }
