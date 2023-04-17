@@ -14,18 +14,15 @@ func FindMinMaxAverage(numbers []int) (int, int, float64, error) {
 	sort.Ints(numbers)
 	menor = (numbers[0])
 	maior = (numbers[len(numbers)-1])
-	var soma int
-	maiornegativo := (numbers[len(numbers)-1])
-	menornegativo := (numbers[0])
-	for _, valor := range numbers {
-		if valor < 0 {
-			menor = maiornegativo
-			maior = menornegativo
-
-		}
-		soma += valor
+	if numbers[0] < 0 {
+		maior = menor
+		menor = (numbers[len(numbers)-1])
 	}
-	media := float64(soma) / float64(len(numbers))
+	var soma int
+	for i := 1; i < len(numbers)-1; i++ {
+		soma += numbers[i]
+	}
+	media := float64(soma) / float64(len(numbers)-2)
 
 	return maior, menor, media, nil
 }
