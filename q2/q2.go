@@ -1,15 +1,11 @@
-package main
+package q2
 
 import (
 	"fmt"
 	"strings"
 )
 
-func main() {
 
-	AverageLettersPerWord("O rato roeu a roupa do rei de Roma")
-
-}
 
 func AverageLettersPerWord(text string) (float64, error) {
 	if len(text) == 0 {
