@@ -5,12 +5,6 @@ import (
 	"strings"
 )
 
-func main() {
-
-	AverageLettersPerWord("O rato roeu a roupa do rei de Roma")
-
-}
-
 func AverageLettersPerWord(text string) (float64, error) {
 	if len(text) == 0 {
 		return 0, fmt.Errorf("texto vazio")
