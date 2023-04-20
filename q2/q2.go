@@ -12,6 +12,9 @@ func main() {
 }
 
 func AverageLettersPerWord(text string) (float64, error) {
+	if len(text) == 0 {
+		return 0, fmt.Errorf("texto vazio")
+	}
 
 	palavras := strings.Split(text, " ")
 	soma := 0.
