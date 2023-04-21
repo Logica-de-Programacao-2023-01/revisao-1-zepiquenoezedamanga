@@ -27,11 +27,11 @@ func CalculateDamage(characterLevel, enemyLevel int) (int, error) {
 			damage = characterLevel * 7
 		}
 
-		levelDifference := int(math.Abs(float64(characterLevel - enemyLevel)))
+		levelDiff := int(math.Abs(float64(characterLevel - enemyLevel)))
 
-		if levelDifference > 20 {
+		if levelDiff > 20 {
 			damage *= 5
-		} else if levelDifference < 20 {
+		} else if levelDiff < 20 {
 			damage *= 2
 		}
 	}
