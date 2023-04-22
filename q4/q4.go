@@ -4,7 +4,7 @@ import "fmt"
 
 func CalculateFinalPrice(basePrice float64, state string, taxCode int) (float64, error) {
 
-	if taxCode < 1 && taxCode > 3 {
+	if taxCode == 0 {
 		return 0, fmt.Errorf("imposto não encontrado ")
 	}
 
