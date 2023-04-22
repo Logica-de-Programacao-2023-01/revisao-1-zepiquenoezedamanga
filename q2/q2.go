@@ -5,22 +5,19 @@ import (
 	"strings"
 )
 
-
-
 func AverageLettersPerWord(text string) (float64, error) {
-	if len(text) == 0 {
+	speciais:= []string{"!","?","@","#","$",".",",","1","2","3","4","5","6","7","8","9"}
+	for _, caracter:= range speciais {
+		text = strings.ReplaceAll(text,caracter,"")
+	}
+	palavras := strings.Fields(text)
+	if len(palavras) == 0 {
 		return 0, fmt.Errorf("texto vazio")
+		
 	}
-
-	palavras := strings.Split(text, " ")
-	soma := 0.
-	for x := 0; x < len(palavras); x++ {
-		soma += float64(len(palavras[x]))
+	var totalpalavra int
+	for _, palavra:= range palavras {
+		totalpalavra += len(palavra)
 	}
-
-	media := soma / float64(len(palavras))
-
-	fmt.Printf("%f", media)
-
-	return 0, nil
+	return float64(totalpalavra) / float64(len(palavras)),nil
 }
