@@ -3,8 +3,9 @@ package q4
 import "fmt"
 
 func CalculateFinalPrice(basePrice float64, state string, taxCode int) (float64, error) {
-
-	if taxCode == 0 {
+// Para zé da manga:
+// muda esse "if taxCode < 1 && taxCode > 3 {" para "if taxCode == 0" do jeito que a questao fala e tudo estará resolvido
+	if taxCode < 1 && taxCode > 3 {
 		return 0, fmt.Errorf("imposto não encontrado ")
 	}
 
